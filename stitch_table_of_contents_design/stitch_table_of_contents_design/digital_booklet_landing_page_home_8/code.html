@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DeepCode Catalog - Final Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Oswald:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F97316", // Vibrant Orange
+                        "secondary": "#1E293B", // Deep Navy/Slate
+                        "background-light": "#F1F5F9",
+                        "background-dark": "#0F172A", // Very dark blue/slate
+                        "paper-light": "#FAFAF9", // Warm white paper
+                        "paper-dark": "#E2E8F0", // Slightly off-white for dark mode paper
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                        headline: ['Oswald', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'book': '0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0,0,0,0.1)',
+                        'book-float': '0 35px 60px -15px rgba(0, 0, 0, 0.5)',
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPjxmaWx0ZXIgaWQ9J25vaXNlJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC41JyBudW1PY3RhdmVzPScxJyBzdGl0Y2hUaWxlcz0nc3RpdGNoJyAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbHRlcj0ndXJsKCNub2lzZSknIG9wYWNpdHk9JzAuMDUnLz48L3N2Zz4=')",
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .book-container {
+            perspective: 2000px;
+        }.page-left {
+            transform-origin: right center;
+            background: linear-gradient(to right, #ffffff 0%, #f1f5f9 95%, #cbd5e1 100%);
+            border-radius: 4px 0 0 4px;
+            box-shadow: 
+                inset 15px 0 20px -10px rgba(255,255,255,0.8),inset -30px 0 40px -20px rgba(0,0,0,0.25);}.page-right {
+            transform-origin: left center;
+            background: linear-gradient(to left, #ffffff 0%, #f1f5f9 95%, #cbd5e1 100%);
+            border-radius: 0 4px 4px 0;
+            box-shadow: 
+                inset -15px 0 20px -10px rgba(255,255,255,0.8),inset 30px 0 40px -20px rgba(0,0,0,0.25);}.gutter-shadow {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            transform: translateX(-50%);
+            background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+            z-index: 30;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }.vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .text-justified {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-800 dark:bg-background-dark min-h-screen flex flex-col font-sans text-slate-800 dark:text-slate-100 overflow-hidden transition-colors duration-300">
+<nav class="w-full h-16 bg-white/5 backdrop-blur-md border-b border-white/10 flex items-center justify-between px-6 z-50 fixed top-0 left-0 right-0">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-md flex items-center justify-center text-white font-bold text-lg shadow-lg">
+<span class="material-symbols-outlined text-xl">code</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-white">DeepCode</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">info</span>
+                About
+            </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-orange-600 text-white text-sm font-semibold rounded-full transition-colors shadow-lg shadow-orange-500/30">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                Download PDF
+            </button>
+</div>
+</nav>
+<main class="flex-grow flex items-center justify-center p-4 md:p-8 lg:p-12 mt-16 relative">
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-slate-900">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-blue-900/20 rounded-full blur-[120px]"></div>
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-black"></div>
+</div>
+<button class="hidden md:flex absolute left-4 lg:left-8 z-40 w-14 h-14 bg-white/5 hover:bg-white/10 rounded-full items-center justify-center backdrop-blur-sm border border-white/10 transition-all group shadow-2xl hover:scale-105">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors text-3xl">chevron_left</span>
+</button>
+<button class="hidden md:flex absolute right-4 lg:right-8 z-40 w-14 h-14 bg-white/5 hover:bg-white/10 rounded-full items-center justify-center backdrop-blur-sm border border-white/10 transition-all group shadow-2xl hover:scale-105">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-white transition-colors text-3xl">chevron_right</span>
+</button>
+<div class="book-container w-full max-w-7xl h-[650px] lg:h-[750px] relative z-10 flex shadow-book-float rounded-md overflow-hidden">
+<div class="gutter-shadow"></div>
+<div class="w-1/2 h-full bg-slate-900 text-white relative overflow-hidden rounded-l-md page-left hidden md:flex flex-row border-r border-slate-800/50">
+<div class="absolute inset-0 bg-paper-texture opacity-20 pointer-events-none z-20 mix-blend-overlay"></div>
+<div class="w-16 h-full border-r border-white/10 flex flex-col items-center justify-center py-12 relative z-10 bg-slate-900/50 backdrop-blur-sm">
+<div class="h-full flex flex-col justify-between items-center py-4">
+<span class="text-xs font-mono text-white/40 tracking-widest rotate-180" style="writing-mode: vertical-rl;">FINAL STEP</span>
+<h2 class="vertical-text font-headline text-5xl lg:text-7xl font-bold tracking-tighter text-white/10 uppercase whitespace-nowrap">
+                            SUCCESS
+                        </h2>
+<span class="text-xs font-mono text-white/40 tracking-widest rotate-180" style="writing-mode: vertical-rl;">DEEPCODE</span>
+</div>
+<div class="absolute left-2 top-10 bottom-10 w-px bg-primary/30"></div>
+</div>
+<div class="flex-1 relative flex flex-col">
+<div class="absolute inset-0 z-0">
+<img alt="Graduates celebrating" class="w-full h-full object-cover opacity-30 mix-blend-luminosity scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPCjUMMyS7KKIqM_JpsAHdiaJ4kPU0xj1ioUPSsuVNFCpgM8oAPwUatRtKAkBQQX3sKPl9Jja1OBAqGzGCqz5wCSZLzxOHMI5PBhcbdca1D3HQpzGGzK5OKms3IiPc4CDoCDNlhaTrPYypqpjRiLf1ZxitkUOHi0lYnzEMBWB7QPhIP2JZyAB8SLvEz06vRsIkGdg9BO7aMIR4fYCSOZ0DzNEJI76KpDYJ74gRGKEAdYewYTjqSKWnEn-njTXZyuaZNRnDpkxBv8WE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40"></div>
+</div>
+<div class="relative z-10 flex flex-col h-full p-10 lg:p-14 justify-between">
+<div class="mt-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 border border-primary/30 rounded-full mb-6 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-sm">stars</span>
+<span class="text-xs font-bold text-primary uppercase tracking-wider">Top Rated Bootcamp</span>
+</div>
+<h1 class="text-4xl lg:text-5xl font-display font-bold leading-[1.1] text-white text-shadow-sm">
+                                Join the Next<br/>
+<span class="text-primary italic font-serif font-normal">Generation</span> of<br/>
+                                Developers
+                            </h1>
+<p class="text-slate-300 mt-6 max-w-md text-sm leading-relaxed font-light">
+                                Don't just learn to code—master the craft. Join a community of driven individuals transforming their careers. Our curriculum is designed by industry experts to get you hired.
+                            </p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4 bg-white/5 p-4 rounded-lg border border-white/10 backdrop-blur-sm">
+<div class="flex -space-x-3 overflow-hidden">
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 bg-slate-400 overflow-hidden">
+<img alt="student" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKDR-RkQINDhFLLQ8GiHZ8WSHvNsxyQ38GL19zzX5m7GElj-ia98fMOLvXIqbsHoZOrKXaVAi_g5_sX_WYQro33CzOP9uxYZhF9CZ4Y1abTfwk94F4b5r_YWFx2o2TcjYKqcHoWLsLL8d-FANTRzTMB0hiPQfmEtYwmj9wJlbSAiOPE5ZBaiFuAXRqVMTWc8v2VxBPiiy6bczganTcDHIOy5xAg9ohhoyykrBjC8Ktyrv7h9q4lc2idVNM3T5ezQRFsCon-5egOXHg"/>
+</div>
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 bg-slate-500 overflow-hidden">
+<img alt="student" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0aIxzgkLHV8nhWSGH8SnWRlhi5XSs3ZPB-0wueVsbNY-JlvHM6M74FLhTQCRU4WOFrJV77Sn3nu5UMuXZiy9xRdSZo8sHiBTKvvK-JwvVmHKQYXPGCYQBSxJF5VnwUobpGPFcbURR6BD7X47Wk81YujnJZS200Sx9jbolDfBJZlEJV0mTPitHjoy82pMFkZF9Mk7Dfhs8SMmibtGt0Xul6bnPN96JcIOXCLwCFpymrgMdQs2bY5Bq8aPf4legCMbTdzIpiUeeDJHv"/>
+</div>
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 bg-slate-600 overflow-hidden">
+<img alt="student" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIdfqWtKZQKCjkXXH71xc7-q7Kskc9JUH13VawJptdOSy05K4Mx-0lKBlpgnBx5rbwES7ChuWG1VU__3xdY30VU3gr4WVp-UyCxX7zINS415-yyjn-HvPMWXtGHgmyG7xzGDtnRckEgqcVEMlHjcoI-Yuj0Fi92npWdhwQgxcYIVSPUe60XyYebB1PRhuoWcAMn-UusyzQ-t3S6UMqGpKtBobEqt7jI8G79XUFpLeU3Qp7mMLT7Uc22iqxF1d69ZSGvSEODPeJXrhR"/>
+</div>
+<div class="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 bg-slate-700 flex items-center justify-center text-xs font-bold text-white">
+                                            +500
+                                        </div>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold text-sm">Join 500+ Alumni</span>
+<span class="text-slate-400 text-xs">Hired at top tech companies</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col items-center justify-center p-3 rounded bg-white/5 border border-white/5 text-center">
+<span class="material-symbols-outlined text-green-400 mb-1">verified</span>
+<span class="text-[10px] text-slate-300 uppercase tracking-wide">Job Guarantee</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3 rounded bg-white/5 border border-white/5 text-center">
+<span class="material-symbols-outlined text-blue-400 mb-1">workspace_premium</span>
+<span class="text-[10px] text-slate-300 uppercase tracking-wide">Certified</span>
+</div>
+<div class="flex flex-col items-center justify-center p-3 rounded bg-white/5 border border-white/5 text-center">
+<span class="material-symbols-outlined text-purple-400 mb-1">group</span>
+<span class="text-[10px] text-slate-300 uppercase tracking-wide">Mentorship</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-white/10 pt-6 mt-auto">
+<div class="flex items-center gap-2 opacity-50">
+<span class="material-symbols-outlined text-lg">code</span>
+<span class="font-bold text-xs tracking-widest uppercase">DeepCode</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-full bg-paper-light text-slate-800 relative rounded-r-md page-right overflow-hidden flex flex-col border-l border-slate-200/50">
+<div class="absolute inset-0 bg-paper-texture opacity-40 pointer-events-none z-20 mix-blend-multiply"></div>
+<div class="flex-grow flex flex-col p-8 lg:p-14 relative z-10 overflow-y-auto">
+<div class="w-full h-px bg-slate-200 mb-8 flex items-center justify-between">
+<span class="bg-primary h-1 w-12 block"></span>
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Registration</span>
+</div>
+<div class="mb-6">
+<div class="flex items-baseline gap-3 mb-2">
+<h4 class="text-sm font-bold text-primary uppercase tracking-widest flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            Enrollment Open
+                        </h4>
+<div class="h-px bg-slate-300 flex-grow"></div>
+</div>
+<h2 class="text-4xl lg:text-5xl font-headline font-bold text-slate-900 uppercase leading-none mb-4">
+                            Secure Your<br/>
+<span class="text-slate-400">Spot Today</span>
+</h2>
+<p class="text-slate-600 font-serif italic pl-1 text-sm max-w-md">
+                            Complete the form below to begin your journey. Immediate access upon registration.
+                        </p>
+</div>
+<div class="bg-white border border-slate-200 shadow-sm p-6 lg:p-8 rounded-sm relative flex-grow flex flex-col justify-center">
+<div class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md z-30 uppercase tracking-wider animate-bounce">
+                        Selling Fast!
+                    </div>
+<form class="space-y-4">
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-1" for="name">Full Name</label>
+<input class="w-full border-slate-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary/20 text-sm py-2.5" id="name" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-1" for="email">Email Address</label>
+<input class="w-full border-slate-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary/20 text-sm py-2.5" id="email" placeholder="john@example.com" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-slate-500 mb-1" for="phone">Phone Number</label>
+<input class="w-full border-slate-300 rounded-md shadow-sm focus:border-primary focus:ring focus:ring-primary/20 text-sm py-2.5" id="phone" placeholder="+1 (555) 000-0000" type="tel"/>
+</div>
+<button class="w-full bg-primary hover:bg-orange-600 text-white font-bold text-lg py-3.5 rounded shadow-lg shadow-orange-500/30 transition-transform active:scale-[0.98] mt-2 flex items-center justify-center gap-2 group" type="button">
+                            REGISTER NOW
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<div class="mt-6 text-center border-t border-slate-100 pt-4">
+<p class="text-xs text-red-500 font-bold mb-1 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">hourglass_empty</span>
+                        Only 5 slots left for this cohort
+                    </p>
+<div class="flex items-center justify-center gap-3">
+<span class="text-slate-400 line-through text-lg font-medium">Special Offer: $499</span>
+<span class="text-primary text-xl font-bold">Only $299 - Limited Time!</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 md:px-14 flex justify-between items-center border-t border-slate-200/60 bg-white/50 relative z-10">
+<span class="font-headline font-bold text-slate-800 text-xl">12</span>
+<div class="flex items-center gap-2 opacity-60">
+<span class="font-bold text-xs tracking-widest uppercase text-slate-600">DeepCode</span>
+<span class="material-symbols-outlined text-lg text-slate-600">code</span>
+</div>
+</div>
+</div>
+</div>
+<div class="md:hidden absolute bottom-6 flex gap-4 items-center z-50">
+<button class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center border border-white/10 backdrop-blur-md">
+<span class="material-symbols-outlined text-white">chevron_left</span>
+</button>
+<span class="text-white text-xs font-medium bg-black/30 px-3 py-1 rounded-full backdrop-blur-md">11-12 / 12</span>
+<button class="w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined text-white">chevron_right</span>
+</button>
+</div>
+</main>
+<div class="fixed bottom-6 w-full py-2 bg-transparent z-40 text-center pointer-events-none hidden md:block">
+<div class="inline-flex items-center gap-2 bg-slate-900/80 backdrop-blur-md px-5 py-2 rounded-full border border-white/10 shadow-lg">
+<div class="w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-white/40 transition-colors cursor-pointer pointer-events-auto"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-white/40 transition-colors cursor-pointer pointer-events-auto"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-white/40 transition-colors cursor-pointer pointer-events-auto"></div>
+<div class="w-2 h-2 rounded-full bg-primary ring-2 ring-primary/30 cursor-pointer pointer-events-auto"></div>
+<span class="text-[10px] text-slate-400 ml-3 uppercase tracking-wider font-medium border-l border-white/10 pl-3">Registration</span>
+</div>
+</div>
+</body></html>
