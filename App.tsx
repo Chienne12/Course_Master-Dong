@@ -94,9 +94,13 @@ function App() {
         const leftId = `spread-${index + 1}-left`;
         const rightId = `spread-${index + 1}-right`;
 
+        const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+          ? import.meta.env.BASE_URL
+          : `${import.meta.env.BASE_URL}/`;
+
         // Put audio files under `public/voice/` and name them like: `spread-1-left.mp3`
-        const leftSrc = `/voice/${leftId}.mp3`;
-        const rightSrc = `/voice/${rightId}.mp3`;
+        const leftSrc = `${baseUrl}voice/${leftId}.mp3`;
+        const rightSrc = `${baseUrl}voice/${rightId}.mp3`;
 
         return {
           left: (
